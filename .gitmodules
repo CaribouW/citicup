@@ -1,0 +1,9 @@
+[submodule "frontend-admin"]
+	path = frontend-admin
+	url = git@github.com:GStarP/networker-admin.git
+[submodule "frontend-user"]
+	path = frontend-user
+	url = git@github.com:HermitSun/networker-user.git
+[submodule "server"]
+	path = server
+	url = git@github.com:TianChenjiang/Networker.git

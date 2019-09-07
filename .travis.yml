@@ -1,0 +1,12 @@
+branches:
+  only:
+    - dev
+
+sudo: true
+install:
+  - bash bash/install.sh
+  - bash bash/mv.sh
+  - cd server && bash local_setup.sh
+
+after_success:
+  - ssh root@106.14.140.93 "./setup.sh"
