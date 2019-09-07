@@ -1,12 +1,13 @@
 branches:
   only:
-    - dev
-
+  - dev
 sudo: true
 install:
-  - bash bash/install.sh
-  - bash bash/mv.sh
-  - cd server && bash local_setup.sh
-
+- bash bash/install.sh
+- bash bash/mv.sh
+- cd server && bash local_setup.sh
 after_success:
-  - ssh root@106.14.140.93 "./setup.sh"
+- ssh root@106.14.140.93 "./setup.sh"
+before_install:
+- openssl aes-256-cbc -K $encrypted_cc51bcff59d0_key -iv $encrypted_cc51bcff59d0_iv
+  -in deploy_rsa.enc -out deploy_rsa -d
