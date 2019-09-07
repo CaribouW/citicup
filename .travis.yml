@@ -2,14 +2,20 @@ language: node_js
 
 branches:
   only:
-  - master
+    - master
 sudo: true
+
+git:
+  submodules: false
+
 install:
-- bash bash/install.sh
+  - bash bash/install.sh
 
 before_install:
-- openssl aes-256-cbc -K $encrypted_cc51bcff59d0_key -iv $encrypted_cc51bcff59d0_iv
-  -in deploy_rsa.enc -out deploy_rsa -d
+  - openssl aes-256-cbc -K $encrypted_cc51bcff59d0_key -iv $encrypted_cc51bcff59d0_iv
+    -in deploy_rsa.enc -out deploy_rsa -d
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  - git submodule update --init --recursive
 
 after_success:
   - ssh root@106.14.140.93 "./setup.sh"
