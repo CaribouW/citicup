@@ -24,4 +24,7 @@ before_install:
 
 
 after_success:
-  - ssh root@106.14.140.93 "./setup.sh"
+  - ssh root@106.14.140.93 "cd citicup && ./setup.sh"
+
+addons:
+  ssh_known_hosts: 106.14.140.93
