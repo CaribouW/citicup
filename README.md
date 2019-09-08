@@ -1,6 +1,6 @@
 # citicup
 
-![](https://api.travis-ci.com/CaribouW/citicup.svg?branch=master)
+[![Build Status](https://travis-ci.com/CaribouW/citicup.svg?branch=master)](https://travis-ci.com/CaribouW/citicup)
 
 集成如下 repos
 
