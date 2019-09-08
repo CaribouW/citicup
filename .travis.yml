@@ -19,11 +19,11 @@ script:
 before_install:
   - openssl aes-256-cbc -K $encrypted_cc51bcff59d0_key -iv $encrypted_cc51bcff59d0_iv
     -in deploy_rsa.enc -out deploy_rsa -d
-  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  - sed -i 's/git@github.com:/https:\/\/$git-name:$git-passowrd@github.com\//' .gitmodules
   - git submodule update --init --recursive
 
 after_success:
-  - rsync -az --delete ./dist/* <USERNAME>@<HOST>:<TARGET-PATH>
+  - rsync -az --delete ./bash/* root@106.14.140.93:/root/citicup
 
 addons:
   ssh_known_hosts: 106.14.140.93
