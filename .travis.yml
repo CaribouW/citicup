@@ -11,8 +11,11 @@ services:
 git:
   submodules: false
 
-install:
-  - bash bash/install.sh
+addons:
+  ssh_known_hosts: 106.14.140.93
+
+#install:
+#  - bash bash/install.sh
 
 script:
   - echo "skipping tests"
@@ -23,7 +26,5 @@ before_install:
   - git submodule update --init --recursive
 
 after_success:
-  - rsync -az --delete ./bash/* root@106.14.140.93:/root/citicup
+  - ssh root@106.14.140.93 StrictHostKeyChecking=no 'ls'
 
-addons:
-  ssh_known_hosts: 106.14.140.93
