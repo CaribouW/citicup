@@ -4,3 +4,4 @@ bash bash/install.sh
 cp -r frontend-admin/networker/* server/citicup-frontend/networker
 cp -r frontend-user/networker/* server/citicup-frontend/networker
 cd server && bash bash/local_setup.sh && cd ..
+ssh root@106.14.140.93 StrictHostKeyChecking=no 'cd citicup && bash setup.sh'
