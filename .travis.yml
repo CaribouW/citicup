@@ -19,7 +19,7 @@ script:
 before_install:
   - openssl aes-256-cbc -K $encrypted_cc51bcff59d0_key -iv $encrypted_cc51bcff59d0_iv
     -in deploy_rsa.enc -out deploy_rsa -d
-  - sed -i 's/git@github.com:/https:\/\/${GIT_NAME}:${GIT_TOKEN}@github.com\//' .gitmodules
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
   - git submodule update --init --recursive
 
 after_success:
