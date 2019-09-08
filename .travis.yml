@@ -26,4 +26,3 @@ install:
 
 after_success:
   - bash bash/setup-deploy.sh
-  - ssh root@106.14.140.93 StrictHostKeyChecking=no 'rm -rf citicup/citicup-frontend/networker/* && cd citicup && bash setup.sh &'
