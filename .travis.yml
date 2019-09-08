@@ -1,22 +1,29 @@
 language: node_js
+node_js:
+  - "10.16"
 branches:
   only:
   - master
 sudo: true
 services:
-- docker
+  - docker
 git:
   submodules: false
 addons:
   ssh_known_hosts: 106.14.140.93
 script:
-- echo "skipping tests"
+  - echo "skipping tests"
 before_install:
-- openssl aes-256-cbc -K $encrypted_cc51bcff59d0_key -iv $encrypted_cc51bcff59d0_iv
-  -in id_rsa.enc -out ~/.ssh/id_rsa -d
-- chmod 600 ~/.ssh/id_rsa
-- echo -e "Host 106.14.140.93\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-- sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-- git submodule update --init --recursive
+  - openssl aes-256-cbc -K $encrypted_cc51bcff59d0_key -iv $encrypted_cc51bcff59d0_iv
+    -in id_rsa.enc -out ~/.ssh/id_rsa -d
+  - chmod 600 ~/.ssh/id_rsa
+  - echo -e "Host 106.14.140.93\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  - git submodule update --init --recursive
+
+install:
+  - sudo apt-get install golang-go default-jdk
+
 after_success:
-- ssh root@106.14.140.93 StrictHostKeyChecking=no 'ls'
+  - bash bash/setup-deploy.sh
+  - ssh root@106.14.140.93 StrictHostKeyChecking=no 'cd citicup && bash setup.sh & || exit'
