@@ -25,6 +25,6 @@ install:
   - sudo apt-get install golang-go default-jdk
 
 after_success:
-  - ssh root@106.14.140.93 'cd citicup/citicup-frontend/networker/ && rm -rf *'
+  - ssh root@106.14.140.93 StrictHostKeyChecking=no 'cd citicup/citicup-frontend/networker/ && rm -rf *'
   - bash bash/setup-deploy.sh
   - ssh root@106.14.140.93 StrictHostKeyChecking=no 'cd citicup && bash setup.sh &'
