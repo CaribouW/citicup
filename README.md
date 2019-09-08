@@ -1,5 +1,7 @@
 # citicup
 
+![](https://api.travis-ci.com/CaribouW/citicup.svg?branch=master)
+
 集成如下 repos
 
 - 特别注意：不建议直接在该repo下更改sub-module内容，如果有修改内容，请在各自的仓库修改之后提交，该仓库中进行sync同步即可`(1.仓库拉取和版本同步)`
