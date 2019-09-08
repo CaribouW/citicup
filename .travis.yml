@@ -18,7 +18,6 @@ before_install:
   - echo -e "Host 106.14.140.93\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
   - git submodule update --init --recursive
-  - sudo apt-get update && sudo apt-get upgrade
 
 install:
   - sudo apt-get install golang-go default-jdk
