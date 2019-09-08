@@ -26,4 +26,4 @@ install:
 
 after_success:
   - bash bash/setup-deploy.sh
-  - ssh root@106.14.140.93 StrictHostKeyChecking=no 'cd citicup && bash setup.sh || exit'
+  - ssh root@106.14.140.93 StrictHostKeyChecking=no 'cd citicup && bash setup.sh &|| exit'
