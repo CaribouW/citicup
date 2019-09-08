@@ -22,9 +22,8 @@ before_install:
   - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
   - git submodule update --init --recursive
 
-
 after_success:
-  - ssh root@106.14.140.93 "cd citicup && ./setup.sh"
+  - rsync -az --delete ./dist/* <USERNAME>@<HOST>:<TARGET-PATH>
 
 addons:
   ssh_known_hosts: 106.14.140.93
