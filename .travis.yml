@@ -26,8 +26,8 @@ install:
   - sudo apt-get install golang-go default-jdk
   - ls frontend-admin/networker/
   - ls frontend-user/networker/
-  - mv -r frontend-user/networker/* server/citicup-frontend/networker
-  - mv -r frontend-admin/networker/* server/citicup-frontend/networker
+  - cp -r frontend-user/networker/* server/citicup-frontend/networker
+  - cp -r frontend-admin/networker/* server/citicup-frontend/networker
 
   - ls server/citicup-frontend/networker
 
