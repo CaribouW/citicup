@@ -40,11 +40,15 @@ bash bash/sync.sh
 
 #### 2. 本地数据库和服务器开启
 
-一条指令搭建docker环境和go服务器
+搭建docker环境和go服务器
 
 根目录下执行：
 
 ```bash
+cd server
+docker-compose up -d
+cd ..
+# 建立，开启
 bash bash/setup-locally.sh
 ```
 
