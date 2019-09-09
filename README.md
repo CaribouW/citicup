@@ -64,6 +64,8 @@ bash bash/setup-locally.sh
 
 ### 服务端部署
 
+首先需要在各个子目录下完成node依赖包的安装，在此不赘述
+
 根目录下执行：
 
 ```bash
