@@ -24,11 +24,8 @@ before_install:
 
 install:
   - sudo apt-get install golang-go default-jdk
-  - ls frontend-admin/networker/
-  - ls frontend-user/networker/
   - mkdir server/citicup-frontend/networker
-  - cp -r frontend-user/networker/* server/citicup-frontend/networker && cp -r frontend-admin/networker/* server/citicup-frontend/networker
-  - ls server/citicup-frontend/networker
+  - bash bash/cp.sh
 
 after_success:
   - bash bash/setup-deploy.sh
