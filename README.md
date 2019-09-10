@@ -14,11 +14,11 @@
 
 采用最简单的微服务架构，访问说明如下
 
-| url                                 | 说明           |
-| ----------------------------------- | -------------- |
-| http://citicup.top/networker/user/  | user用户端     |
-| http://citicup.top/networker/admin/ | admin管理员端  |
-| http://citicup.top/api/             | 后端请求基路径 |
+| url                                  | 说明           |
+| ------------------------------------ | -------------- |
+| https://citicup.top/networker/user/  | user用户端     |
+| https://citicup.top/networker/admin/ | admin管理员端  |
+| https://citicup.top/api/             | 后端请求基路径 |
 
 ### 本地环境搭建
 
